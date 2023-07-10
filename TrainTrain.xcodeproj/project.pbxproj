@@ -11,6 +11,8 @@
 		93FD56462A5A3F180068E0DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FD56452A5A3F180068E0DB /* ContentView.swift */; };
 		93FD56482A5A3F1E0068E0DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93FD56472A5A3F1E0068E0DB /* Assets.xcassets */; };
 		93FD564B2A5A3F1E0068E0DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93FD564A2A5A3F1E0068E0DB /* Preview Assets.xcassets */; };
+		93FD56522A5A3F560068E0DB /* TTWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FD56512A5A3F560068E0DB /* TTWorkout.swift */; };
+		93FD56542A5A426B0068E0DB /* WorkoutDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FD56532A5A426B0068E0DB /* WorkoutDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		93FD56452A5A3F180068E0DB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		93FD56472A5A3F1E0068E0DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93FD564A2A5A3F1E0068E0DB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		93FD56512A5A3F560068E0DB /* TTWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTWorkout.swift; sourceTree = "<group>"; };
+		93FD56532A5A426B0068E0DB /* WorkoutDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,8 @@
 				93FD56452A5A3F180068E0DB /* ContentView.swift */,
 				93FD56472A5A3F1E0068E0DB /* Assets.xcassets */,
 				93FD56492A5A3F1E0068E0DB /* Preview Content */,
+				93FD56512A5A3F560068E0DB /* TTWorkout.swift */,
+				93FD56532A5A426B0068E0DB /* WorkoutDetailView.swift */,
 			);
 			path = TrainTrain;
 			sourceTree = "<group>";
@@ -137,8 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93FD56522A5A3F560068E0DB /* TTWorkout.swift in Sources */,
 				93FD56462A5A3F180068E0DB /* ContentView.swift in Sources */,
 				93FD56442A5A3F180068E0DB /* TrainTrainApp.swift in Sources */,
+				93FD56542A5A426B0068E0DB /* WorkoutDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
