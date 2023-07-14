@@ -9,34 +9,33 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) var context
-    @Query var workouts: [TTWorkout]
 
-    @State var selectedWorkout: TTWorkout? = nil
+    @State var selectedTab: AppTab = .workouts
 
     var body: some View {
-        NavigationStack {
-            List(workouts) { workout in
-                NavigationLink(value: workout) {
-                    Text(workout.name)
+        TabView(selection: $selectedTab) {
+            WorkoutsView()
+                .tabItem {
+                    Label("Workouts", systemImage: "dumbbell")
                 }
+                .tag(AppTab.workouts)
 
-            }
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Button {
-                        let workout = TTWorkout(name: "Upper Body || Pull Day \(workouts.count + 1)", summary: "")
-                        context.insert(workout)
-                    } label: {
-                        Label("Add Workout", systemImage: "plus")
-                    }
+            Text("Community Tab")
+                .tabItem {
+                    Label("Community", systemImage: "figure.run.square.stack")
                 }
-            }
-            .navigationDestination(for: TTWorkout.self) { workout in
-                WorkoutDetailView(workout: workout)
-            }
+                .tag(AppTab.community)
+
+            ProfileView()
+                .tabItem {
+                    Label("Profile", systemImage: "person")
+                }.tag(AppTab.profile)
         }
     }
+}
+
+enum AppTab {
+    case workouts, profile, community
 }
 
 //#Preview {

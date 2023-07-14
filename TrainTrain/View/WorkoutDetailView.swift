@@ -11,6 +11,8 @@ struct WorkoutDetailView: View {
 
     var workout: TTWorkout
     @State var isEditing: Bool = false
+    @State var selectedSegment: TTWorkoutSegment? = nil
+    @State var isAddingBlock: Bool = false
 
     var body: some View {
         List(workout.segments ?? []) { segment in
@@ -20,9 +22,12 @@ struct WorkoutDetailView: View {
                         
                     }
                     .frame(maxWidth: .infinity)
-                    
+
+
+
                     Button {
-                        print("Add Activity Block to Section: \(segment.name)")
+                        selectedSegment = segment
+                        isAddingBlock = true
                     } label: {
                         Label("Add Activity", systemImage: "plus")
                             .labelStyle(.titleAndIcon)
@@ -70,6 +75,14 @@ struct WorkoutDetailView: View {
                     Image(systemName: isEditing ? "checkmark" : "pencil")
                 }
                 .animation(.smooth, value: isEditing)
+            }
+        }
+        .navigationDestination(item: $selectedSegment) { segment in
+            CreateBlockView(segment: segment)
+        }
+        .fullScreenCover(item: $selectedSegment) { segment in
+            NavigationStack {
+                CreateBlockView(segment: segment)
             }
         }
     }

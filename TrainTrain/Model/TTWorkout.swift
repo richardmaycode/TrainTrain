@@ -18,7 +18,7 @@ final class TTWorkout {
     init(name: String, summary: String) {
         self.name = name
         self.summary = summary
-        self.segments = WorkoutSegmentType.allCases.map { TTWorkoutSegment(name: $0.rawValue.capitalized) }
+        self.segments = WorkoutSegmentType.allCases.map { TTWorkoutSegment(name: $0.rawValue.capitalized, blocks: []) }
     }
 }
 
@@ -27,8 +27,11 @@ final class TTWorkoutSegment {
     var name: String = ""
     var isActive: Bool = false
 
-    init(name: String) {
+    @Relationship(.cascade) var blocks: [TTBlock]? = []
+
+    init(name: String, blocks: [TTBlock]) {
         self.name = name
+        self.blocks = blocks
     }
 }
 

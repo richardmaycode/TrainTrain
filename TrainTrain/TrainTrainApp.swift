@@ -12,7 +12,7 @@ struct TrainTrainApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .modelContainer(for: [TTWorkout.self])
+                .modelContainer(for: [TTWorkout.self, TTMeasurementRecord.self])
         }
     }
 }
